@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+.container {
+	width: 700px;
+	max-width: 100%;
+	margin: 0 auto;
+	font-family: "Helvetica Neue",Helvetica,arial,sans-serif;
+}
+</style>
+<script type="text/javascript">
+function inputChange(evt) {
+	var id = document.querySelector('#link_input').value ? document.querySelector('#link_input').value : '2752559738'
+	document.querySelector('#embed_code').innerHTML='<iframe id="comment_iframe_' + id + '" frameborder="0" width="100%" height="0" src="http://webrender.github.io/dec/embed?id=' + id + '&media=' + document.querySelector('#show_media').checked + '"></iframe>\n<script async src="http://webrender.github.io/dec/script.js"><\/script>';
+	document.querySelector('.preview_iframe').src="/dec/embed?id=" + id + '&media=' + document.querySelector('#show_media').checked;
+}
+</script>
+</head>
+<body>
+<div class="container">
+<h1>Embed a Disqus Comment</h1>
+<p>Enter your comment ID:</p>
+<input type="text" id="link_input" placeholder="2752559738" style="width: 100%;" onkeyup="inputChange(event)"/>
+<input type="checkbox" id="show_media" checked onchange="inputChange(event)"/> <span style="font-size: 10px;">Include Media</span>
+<p>Paste this code on your page:</p>
+<textarea id="embed_code" style="width: 100%; height: 50px;">
+<iframe id="comment_iframe_2752559738" frameborder="0" width="100%" height="0" src="http://webrender.github.io/dec/embed?id=2752559738&media=true"></iframe>
+<script async src="http://webrender.github.io/dec/script.js"></script>
+</textarea>
+<p>Preview:</p>
+<iframe class="preview_iframe" id="comment_iframe_2752559738" frameborder="0" width="100%" height="0" src="/dec/embed?id=2752559738&media=true"></iframe>
+<script async src="/dec/script.js"></script>
+</div>
+</body>
+</html>
