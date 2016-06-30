@@ -7,6 +7,29 @@
 	margin: 0 auto;
 	font-family: "Helvetica Neue",Helvetica,arial,sans-serif;
 }
+.help, .help_img {
+	display: inline-block;
+}
+.help {
+	color: rgb(46, 159, 255);
+	font-weight: bold;
+	position: relative;
+}
+.help_img {
+	position: absolute;
+	top: -2px;
+	left: 10px;
+	display: none;
+	border: 1px solid rgb(194, 201, 212);
+	border-radius: 2px;
+	background: white;
+}
+.help:hover .help_img {
+	display: block;
+}
+.inline-block {
+	display: inline-block;
+}
 </style>
 <script type="text/javascript">
 function inputChange(evt) {
@@ -19,7 +42,7 @@ function inputChange(evt) {
 <body>
 <div class="container">
 <h1>Embed a Disqus Comment</h1>
-<p>Enter your comment ID:</p>
+<p class="inline-block">Enter your comment ID (<div class="help">?<div class="help_img"><img src="helpimg.png"></div></div>):</p>
 <input type="text" id="link_input" placeholder="2752559738" style="width: 100%;" onkeyup="inputChange(event)"/>
 <input type="checkbox" id="show_media" checked onchange="inputChange(event)"/> <span style="font-size: 10px;">Include Media</span>
 <p>Paste this code on your page:</p>
