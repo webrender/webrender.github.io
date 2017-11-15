@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <div class="content">
+        <a href="{{ post.url }}" class="linkicon"><img src="/assets/link.svg" class="linkicon" /></a>
+
+        {% if post.network == 'github' %}
+          <blockquote class="github-pull-request">
+            <a href="http://github.com/webrender">Webrender</a> created a pull request in webrender/trello-costello
+            <h2 lang="en" dir="ltr">
+                <a href="https://t.co/bppRTkNtw3" target="_blank">
+                    Use toLocaleString to properly format numbers
+                </a>
+            </h2>
+            {{ post.content }}
+            <hr />
+            August 1, 2017
+            <img src="/assets/github.svg" class="gh-logo" />
+          </blockquote>
+        {% elsif post.network %}
+          {{ post.content }}
+        {% else %}
+          <div class="jekyll-entry">
+
+            {% if post.title != 'no title' %}
+              <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+            {% endif %}
+
+            {{ post.content }}
+
+          </div>
+          </blockquote>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>

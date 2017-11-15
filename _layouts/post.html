@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    {% if page.title != 'no title' %}
+      <h1><a href="{{ url }}">{{ page.title | escape }}</a></h1>
+    {% endif %}
+    <p class="post-meta">
+      {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      {% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {% if page.network == 'github' %}
+      <blockquote class="github-pull-request">
+        <a href="http://github.com/{{ page.pull_request.user }}">{{ page.pull_request.user }}</a> created a pull request in {{ page.pull_request.repo }}
+        <h2 lang="en" dir="ltr">
+            <a href="{{ page.url }}" target="_blank">
+                {{ page.pull_request.title }}
+            </a>
+        </h2>
+        {{ page.content }}
+        <hr />
+        August 1, 2017
+        <img src="/assets/github.svg" class="gh-logo" />
+      </blockquote>
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>

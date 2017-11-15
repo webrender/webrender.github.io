@@ -1,0 +1,21 @@
+<header class="site-header" role="banner">
+    <div class="wrapper">
+        {% assign default_paths = site.pages | map: "path" %}
+        {% assign page_paths = site.header_pages | default: default_paths %}
+        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        <ul class="nav">
+            <li>Work</li>
+            <li>Open Source</li>
+            <li>Networks</li>
+            <li>S</li>
+        </ul>
+    </div>
+</header>
+
+<header class="site-header -bg" role="banner">
+  <div class="wrapper">
+    {% include bg.html %}
+  </div>
+</header>
+
+
