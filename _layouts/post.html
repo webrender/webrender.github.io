@@ -3,9 +3,6 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    {% if page.title != 'no title' %}
-      <h1><a href="{{ url }}">{{ page.title | escape }}</a></h1>
-    {% endif %}
     <p class="post-meta">
       {% if page.author %}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
@@ -26,8 +23,12 @@ layout: default
         August 1, 2017
         <img src="/assets/github.svg" class="gh-logo" />
       </blockquote>
+    {% elsif page.network %}
+      {{ page.content }}
     {% else %}
-      {{ content }}
+      <div class="jekyll-entry">
+        {{ page.content }}
+      </div>
     {% endif %}
   </div>
 

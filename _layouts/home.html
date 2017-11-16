@@ -9,7 +9,7 @@ layout: default
   <ul class="post-list">
     {% for post in paginator.posts %}
       <div class="content">
-        <a href="{{ post.url }}" class="linkicon"><img src="/assets/link.svg" class="linkicon" /></a>
+        <a href="{{ post.url }}" class="linkicon" title="{{ post.date }}"><img src="/assets/link.svg" class="linkicon" /></a>
 
         {% if post.network == 'github' %}
           <blockquote class="github-pull-request">
@@ -28,15 +28,8 @@ layout: default
           {{ post.content }}
         {% else %}
           <div class="jekyll-entry">
-
-            {% if post.title != 'no title' %}
-              <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-            {% endif %}
-
             {{ post.content }}
-
           </div>
-          </blockquote>
         {% endif %}
 
       </div>
