@@ -179,7 +179,9 @@ blockquote.github-pull-request {
 
 #disqus_thread {
   background: $background-color;
+  border: 1px solid #e1e8ed;
   border-radius: 3px;
+  padding: 5px;
 }
 
 .page-content {
