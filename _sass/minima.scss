@@ -133,11 +133,21 @@ blockquote.github-pull-request {
     border-bottom: none;
     width: 100%;
     top: 0;
+
+    .wrapper {
+      width: 500px;
+    }
   }
 }
 
 .wrapper {
   position: relative;
+}
+
+
+.site-nav {
+  z-index: 10;
+  line-height: 20px;
 }
 
 .nav {
@@ -155,6 +165,24 @@ blockquote.github-pull-request {
   }
 }
 
+@media screen and (max-width: 500px) {
+
+  .nav {
+    margin: 0 5px 0;
+
+    li {
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+#disqus_thread {
+  background: $background-color;
+  border-radius: 3px;
+}
+
 .page-content {
   margin-top: 50px;
 }
+
