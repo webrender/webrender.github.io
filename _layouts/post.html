@@ -23,7 +23,7 @@ layout: default
         August 1, 2017
         <img src="/assets/github.svg" class="gh-logo" />
       </blockquote>
-    {% elsif page.network %}
+    {% elsif page.network == 'instagram' or page.network == 'twitter' or page.network == 'tumblr' %}
       {{ page.content }}
     {% else %}
       <div class="jekyll-entry">

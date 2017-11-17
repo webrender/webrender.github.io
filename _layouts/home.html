@@ -10,7 +10,6 @@ layout: default
     {% for post in paginator.posts %}
       <div class="content">
         <a href="{{ post.url }}" class="linkicon" title="{{ post.date }}"><img src="/assets/link.svg" class="linkicon" /></a>
-
         {% if post.network == 'github' %}
           <blockquote class="github-pull-request">
             <a href="http://github.com/webrender">Webrender</a> created a pull request in webrender/trello-costello
@@ -24,7 +23,7 @@ layout: default
             August 1, 2017
             <img src="/assets/github.svg" class="gh-logo" />
           </blockquote>
-        {% elsif post.network %}
+        {% elsif post.network == 'instagram' or post.network == 'twitter' or post.network == 'tumblr' %}
           {{ post.content }}
         {% else %}
           <div class="jekyll-entry">
