@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+<div class="search">
+</div>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <p class="post-meta">
@@ -9,7 +11,7 @@ layout: default
       {% endif %}</p>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content -article" itemprop="articleBody">
     {% if page.network == 'github' %}
       <blockquote class="github-pull-request">
         <a href="http://github.com/{{ page.pull_request.user }}">{{ page.pull_request.user }}</a> created a pull request in {{ page.pull_request.repo }}

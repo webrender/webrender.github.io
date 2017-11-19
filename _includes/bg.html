@@ -51,7 +51,7 @@ function canvasApp() {
 		cellHeight = displayHeight/gridHeight;
 
 		ease = 0.67;
-		velMax = 255;
+		velMax = 102;
 		minDist = 8;
 		minDistSquare = minDist*minDist;
 		sepNormMag = 4;
@@ -145,9 +145,9 @@ function canvasApp() {
 	function restart(evt) {
 		cell = cellList.first;
 		while (cell != null) {
-			cell.bufferR = cell.r = Math.random()*255;
-			cell.bufferG = cell.g = Math.random()*255;
-			cell.bufferB = cell.b = Math.random()*255;
+			cell.bufferR = cell.r = Math.random()*102;
+			cell.bufferG = cell.g = Math.random()*102;
+			cell.bufferB = cell.b = Math.random()*102;
 			cell.bufferRVel = cell.rVel = 0;
 			cell.bufferGVel = cell.gVel = 0;
 			cell.bufferBVel = cell.bVel = 0;
@@ -228,24 +228,24 @@ function canvasApp() {
 				cell.bufferR = 0;
 				cell.bufferRVel *= -1;
 			}
-			else if (cell.bufferR > 255) {
-				cell.bufferR = 255;
+			else if (cell.bufferR > 102) {
+				cell.bufferR = 102;
 				cell.bufferRVel *= -1;
 			}
 			if (cell.bufferG < 0) {
 				cell.bufferG = 0;
 				cell.bufferGVel *= -1;
 			}
-			else if (cell.bufferG > 255) {
-				cell.bufferG = 255;
+			else if (cell.bufferG > 102) {
+				cell.bufferG = 102;
 				cell.bufferGVel *= -1;
 			}
 			if (cell.bufferB < 0) {
 				cell.bufferB = 0;
 				cell.bufferBVel *= -1;
 			}
-			else if (cell.bufferB > 255) {
-				cell.bufferB = 255;
+			else if (cell.bufferB > 102) {
+				cell.bufferB = 102;
 				cell.bufferBVel *= -1;
 			}
 
