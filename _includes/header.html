@@ -58,7 +58,7 @@
             document.querySelector('body').classList.add('-searching');
             document.querySelector('.search').innerHTML = "";
             var iframe = document.createElement('iframe');
-            iframe.src = 'https://webrender.net/search?q=' + encodeURIComponent(event.target.value);
+            iframe.src = '/search?q=' + encodeURIComponent(event.target.value);
             iframe.width = "100%";
             iframe.height = "100%";
             iframe.style.border = "none";
