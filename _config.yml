@@ -21,12 +21,13 @@ email: webrender@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   The online presence of Jeremy Laskar
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://home.webrender.net" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://webrender.net" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: webrender_
 github_username:  webrender
 disqus:
   shortname: webrendernet
 
+timezone: America/Los_Angeles
 # Build settings
 markdown: kramdown
 theme: minima
