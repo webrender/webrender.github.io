@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        html,   body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script>
+
+    var playerState = {
+        state: '0',
+        time: '0'
+    };
+
+    window.addEventListener("message", receiveMessage);
+
+    function receiveMessage(event) {
+        var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+        if (origin !== "http://webrender.net")
+            return;
+        var response = JSON.parse(event.data);
+        if (response.state){
+        }
+        if (!isNaN(response.time)){
+            if (response.time == 0) {
+                sendMessage({
+                    'event':'playVideo'
+                });
+            }
+        }
+    }
+
+    function sendMessage(message) {
+        document.getElementById('child').contentWindow.postMessage(JSON.stringify(message), 'http://webrender.net');
+    }
+
+
+
+    </script>
+</head>
+<body>
+<iframe src="http://webrender.net/shiv.html#LWGJA9i18Co" id="child" frameborder="0" allowfullscreen></iframe>
+</body>
