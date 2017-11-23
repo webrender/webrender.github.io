@@ -14,15 +14,15 @@ layout: default
   <div class="post-content -article" itemprop="articleBody">
     {% if page.network == 'github' %}
       <blockquote class="github-pull-request">
-        <a href="http://github.com/{{ page.pull_request.user }}">{{ page.pull_request.user }}</a> created a pull request in {{ page.pull_request.repo }}
+        <a href="http://github.com/{{ page.user }}">{{ page.user }}</a> created a pull request in {{ page.repo }}
         <h2 lang="en" dir="ltr">
-            <a href="{{ page.url }}" target="_blank">
-                {{ page.pull_request.title }}
+            <a href="{{ page.pr_url }}" target="_blank">
+                {{ page.pr_title }}
             </a>
         </h2>
         {{ page.content }}
         <hr />
-        August 1, 2017
+        {{ page.date | date: "%m %d, %Y" }}
         <img src="/assets/github.svg" class="gh-logo" />
       </blockquote>
     {% elsif page.network == 'instagram' or page.network == 'twitter' or page.network == 'tumblr' %}

@@ -13,15 +13,15 @@ layout: default
         <a href="{{ post.url }}" class="linkicon" title="{{ post.date }}"><img src="/assets/link.svg" class="linkicon" /></a>
         {% if post.network == 'github' %}
           <blockquote class="github-pull-request">
-            <a href="http://github.com/webrender">Webrender</a> created a pull request in webrender/trello-costello
+            <a href="http://github.com/{{ post.user }}">{{ post.user }}</a> created a pull request in {{ post.repo }}
             <h2 lang="en" dir="ltr">
-                <a href="https://t.co/bppRTkNtw3" target="_blank">
-                    Use toLocaleString to properly format numbers
+                <a href="{{ page.pr_url }}" target="_blank">
+                    {{ post.pr_title }}
                 </a>
             </h2>
             {{ post.content }}
             <hr />
-            August 1, 2017
+            {{ post.date | date: "%B %-d, %Y" }}
             <img src="/assets/github.svg" class="gh-logo" />
           </blockquote>
         {% elsif post.network == 'instagram' or post.network == 'twitter' or post.network == 'tumblr' %}
