@@ -54,7 +54,7 @@ On the new applet page, select the **this** link and choose **Instagram** for yo
 
 * **Content Type**: `text/plain`
 
-* **Body**: A YAML-formattted Jekyll document, with newlines replaced with `|||`. There are several examples specified in this project's [Github repo](https://github.com/webrender/ifttt-ghpages/examples), but here's the example for Instagram: `---|||layout: post|||title: {{Caption}} - Tweet|||network: instagram|||date: {{CreatedAt}}|||---|||{{EmbedCode}}`
+* **Body**: A YAML-formattted Jekyll document, with newlines replaced with `|||`. There are several examples specified in this project's [Github repo](https://github.com/webrender/ifttt-ghpages/examples), but here's the example for Instagram: `{% raw %}---|||layout: post|||title: {{Caption}} - Tweet|||network: instagram|||date: {{CreatedAt}}|||---|||{{EmbedCode}}{% endraw %}`
 
 _Technical note:  Initially I had built ifttt-ghpages to accept JSON, but had trouble escaping JSON & newlines properly with IFTTT so I've instead used the format above._
 
