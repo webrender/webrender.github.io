@@ -28,7 +28,10 @@ layout: default
           {{ post.content }}
         {% else %}
           <div class="jekyll-entry">
-            {{ post.content }}
+            {{ post.excerpt }}
+            {% if post.excerpt %}
+              <a href="{{ post.url }}">Read more&hellip;</a>
+            {% endif %}
           </div>
         {% endif %}
 

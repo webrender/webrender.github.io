@@ -27,6 +27,8 @@ github_username:  webrender
 disqus:
   shortname: webrendernet
 
+google_analytics: UA-4667606-2
+
 timezone: America/Los_Angeles
 # Build settings
 markdown: kramdown
@@ -48,3 +50,4 @@ plugins:
 #   - vendor/ruby/
 
 paginate: 10
+excerpt_separator: <!--more-->
