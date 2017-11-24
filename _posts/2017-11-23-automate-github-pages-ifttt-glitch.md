@@ -1,7 +1,7 @@
 ---
 layout: post
 date: November 23, 2017 at 02:30PM
-title: "How to automate your Github Pages blog - for free - with IFTTT and Glitch"
+title: "ifttt-ghpages: Automate your Github Pages blog"
 social_preview: "/post_files/ifttt-social-preview.png"
 description: "IFTTT supports hundreds of services and you can use any of them to automate your blog posts!  For this example, we're going to setup a trigger that automatically cross-posts new images from Instagram on our blog."
 tags:
