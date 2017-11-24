@@ -62,7 +62,7 @@ And you're all set! Now when you create a post on instagram, you'll notice a new
 
 ![](/post_files/ifttt-ghpages-3.png "New commit on Github")
 
-As I mentioned earlier, the possibilities are only limited by the number of services & triggers IFTTT supports:  Some ideas based on other IFTTT triggers:
+As I mentioned earlier, the possibilities are only limited by the number of services & triggers IFTTT supports. Some ideas based on other IFTTT triggers:
 
 * **SMS**: Post to your blog from your mobile phone
 * **Google Assistant**: Post to your blog with your voice
