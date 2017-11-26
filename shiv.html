@@ -27,7 +27,7 @@ var createPlayer = function() {
             'rel': 0,
             'disablekb': 1,
             'iv_load_policy': 3,
-            'origin': 'http://webrender.net'
+            'origin': window.location.protocol + '//webrender.net'
         },
         events: {
             'onReady': muteCheck
@@ -67,6 +67,7 @@ function receiveMessage(message) {
     var validOrigins = {
         'https://www.youtube.com': true,
         'http://webrender.net': true,
+        'https://webrender.net': true,
         'http://localhost:8080': true,
         'http://popupvid.io': true
     }
@@ -87,7 +88,7 @@ function receiveMessage(message) {
 
 function sendMessage(message) {
     // parent.postMessage(JSON.stringify(message), 'http://localhost:8080');
-    parent.postMessage(JSON.stringify(message), 'http://popupvid.io');
+    parent.postMessage(JSON.stringify(message), window.location.protocol + '//popupvid.io');
 }
 
 var playVideo = function() {
