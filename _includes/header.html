@@ -52,7 +52,7 @@
   <script>
     var searchTimeout;
     document.querySelector(".search-input").addEventListener("keyup", event => {
-        if (event.target.value) {
+        if (event.target.value && event.target.value != "") {
           clearTimeout(searchTimeout);
           searchTimeout = setTimeout(() => {
             document.querySelector('body').classList.add('-searching');
