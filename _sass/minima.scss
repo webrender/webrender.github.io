@@ -322,6 +322,7 @@ blockquote.github-pull-request {
     border: 1px solid #e8e8e8;
     background: white;
     position: relative;
+    user-select: none;
 
     @media screen and (min-width: 768px) {
       display: none;
@@ -407,6 +408,11 @@ blockquote.github-pull-request {
 
 .post-content.-article {
   margin-top: -10px;
+}
+
+.post-content.-article iframe, .post-list .content iframe {
+  max-width: 100%;
+  border-radius: 3px;
 }
 
 .post-content img, .post-list .content img {
