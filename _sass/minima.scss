@@ -410,9 +410,15 @@ blockquote.github-pull-request {
   margin-top: -10px;
 }
 
-.post-content.-article iframe, .post-list .content iframe {
+iframe[src*="instagram.com"] {
   max-width: 100%;
   border-radius: 3px;
+  height: 564px;
+  border: 1px solid #e1e8ed;
+
+  @media screen and (max-width: 767px) {
+    height: 416px;
+  }
 }
 
 .post-content img, .post-list .content img {
