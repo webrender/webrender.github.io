@@ -14,6 +14,8 @@ tags:
 
 ![](/post_files/ifttt-ghpages.png "ifttt-ghpages")
 
+__Update 02/18: This article has been translated into Russian by HTRecover - check it out here: [http://howtorecover.me/kak-avtomatizirovat-blog-github](http://howtorecover.me/kak-avtomatizirovat-blog-github)__
+
 Earlier this month, I finally decided that it was time to migrate my personal blog from Tumblr to Github Pages.  The one thing holding me back was social media cross-posting;  On Tumblr, I had been using IFTTT to create new posts based on my social media sharing, but IFTTT doesn't natively support Github Pages.
 
 To solve this problem, I created [ifttt-ghpages](https://glitch.com/~ifttt-ghpages), a small webhook you can run for free on [Glitch](https://glitch.com) that creates posts on Github Pages from IFTTT actions.
