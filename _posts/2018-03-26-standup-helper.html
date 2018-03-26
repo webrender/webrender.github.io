@@ -1,0 +1,19 @@
+---
+layout: post
+title: standup-helper
+use_excerpt: true
+date: '2018-03-26T00:00:00-08:00'
+tags: []
+---
+<h4>standup-helper</h4>
+<img src="/post_files/standup-helper-demo.gif"/><br/>
+<p>At Disqus, teams meet for a daily standup to check-in and share the latest updates on projects and ask questions. Since we have a distributed team working across different time zones, having standup at a fixed time isn’t ideal. We experimented with a few standup bots for Slack but found that they didn’t provide enough context around what people were working on. Specifically, we wanted a better way to connect a developer’s update to the related Trello card(s).</p>
+<!--more-->
+<p>To solve this problem, we created Standup Helper, an open source Slackbot. It integrates with Trello by linking people’s responses to the cards they’re assigned to.</p>
+<p>Using this information, Standup Helper creates an interactive, asynchronous dashboard that our team can use to augment our standups with useful, persistent data such as:</p>
+<li>Active/inactive tasks, linked to their corresponding Trello cards</li>
+<li>Recently merged PRs and PRs in review (integrates with Phabricator)</li>
+<li>Upcoming Out of Offices (integrates with an OOO ICS feed)</li>
+<li>Custom notes, interrupt notifications, and sidebar requests</li>
+<li>Standup Helper lets us get process out of the way so we can focus our standups around meaningful conversations.</li>
+<p>Source + install instructions <a href="https://github.com/disqus/phab-trello">available on Github.</a></p>
