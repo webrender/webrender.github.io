@@ -36,11 +36,12 @@
           <li><a href="/2017/07/01/disqus.html">Disqus</a></li>
           <li><a href="/2014/11/20/kixeye.html">Kixeye</a></li>
           <li><a href="/2012/01/01/perricone.html">Perricone<a></li>
-          <li><a href="https://webrender.github.io/resume/printable/">Resume</a></li>
+          <li><a href="https://webrender.github.io/resume/">Resume</a></li>
           <li><strong>Open Source</strong></li>
           <li><a href="/2018/03/26/standup-helper.html">standup-helper</a></li>
           <li><a href="/2018/03/26/phab-trello.html">phab-trello</a></li>
           <li><a href="/2018/03/25/hangoutlook.html">hangoutlook</a></li>
+          <li><a href="/2017/11/23/automate-github-pages-ifttt-glitch.html">ifttt-ghpages</a></li>
           <li><a href="/2017/07/17/collapsible-trello-lists.html">trello-collapse-lists</a></li>
           <li><a href="/2017/05/30/costello.html">trello-costello</a></li>
           <li><a href="/2016/09/27/10ktower-build-your-vertical-empire.html">10ktower<a></li>
@@ -67,9 +68,16 @@
             document.querySelector('.search').appendChild(iframe);
           }, 1000)
         } else {
+          clearTimeout(searchTimeout);
           document.querySelector('body').classList.remove('-searching');
         }
-        event.preventDefault(); // No need to `return false;`.
+        event.preventDefault();
+    });
+    document.body.addEventListener('click', event => {
+      if (event.target != document.querySelector('.search-input')) {
+        clearTimeout(searchTimeout);
+        document.querySelector('body').classList.remove('-searching');
+      }
     });
   </script>
 
