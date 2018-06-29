@@ -14,7 +14,7 @@ tags:
 
 ![](/post_files/ifttt-ghpages.png "ifttt-ghpages")
 
-_Update 02/18: This article has been translated into Uzbek by GetColorings - check it out here: [http://getcolorings.com/uz-automate-github](http://getcolorings.com/uz-automate-github)_
+_Update 06/29: This article has been translated into Uzbek by GetColorings - check it out here: [http://getcolorings.com/uz-automate-github](http://getcolorings.com/uz-automate-github)_
 
 _Update 02/18: This article has been translated into Russian by HTRecover - check it out here: [http://howtorecover.me/kak-avtomatizirovat-blog-github](http://howtorecover.me/kak-avtomatizirovat-blog-github)_
 
