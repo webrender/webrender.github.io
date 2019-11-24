@@ -25,6 +25,18 @@ layout: default
         {{ page.date | date: "%m %d, %Y" }}
         <img src="/assets/github.svg" class="gh-logo" />
       </blockquote>
+    {% elsif page.network == 'pocket' %}
+      <blockquote class="github-pull-request">
+        Added an article to favorites in Pocket:
+        <h2 lang="en" dir="ltr">
+            <a href="{{ page.url }}" target="_blank">
+               <img src="{{ page.image_url }}"/>  
+              {{ page.title }}
+            </a>
+        </h2>
+        <hr />
+        {{ page.date | date: "%m %d, %Y" }}
+      </blockquote>
     {% elsif page.network == 'instagram' or page.network == 'twitter' or page.network == 'tumblr' %}
       {{ page.content }}
     {% else %}
