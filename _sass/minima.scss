@@ -257,7 +257,7 @@ blockquote.github-pull-request {
 
     .title-wrapper {
       @media screen and (max-width: 767px) {
-        width: 560px;
+        width: 100%;
         margin: 0 auto;
       }
     }
@@ -430,6 +430,28 @@ iframe[src*="instagram.com"] {
 
 .pagination, .rss-subscribe, .footer-col-wrapper {
     text-align: right;
+    @media screen and (max-width: 767px) {
+      font-size: 0.8em;
+    }
+}
+
+.footer-col-3 {
+  @media screen and (max-width: 767px) {
+    transform: scale(0.8);
+    transform-origin: top right;
+    
+  }
+}
+
+.site-footer {
+  @media screen and (max-width: 767px) {
+    margin: 0 30px;
+    z-index: 6;
+    position: relative;
+    h2 {
+      margin-bottom: 5px;
+    }
+  }
 }
 
 .fourohfour {
