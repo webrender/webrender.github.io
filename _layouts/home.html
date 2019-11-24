@@ -24,17 +24,17 @@ layout: default
             {{ post.date | date: "%B %-d, %Y" }}
             <img src="/assets/github.svg" class="gh-logo" />
           </blockquote>
-        {% elsif page.network == 'pocket' %}
+        {% elsif post.network == 'pocket' %}
           <blockquote class="github-pull-request">
             Added an article to favorites in Pocket:
             <h2 lang="en" dir="ltr">
-                <a href="{{ page.url }}" target="_blank">
-                   <img src="{{ page.image_url }}"/>  
-                  {{ page.title }}
+                <a href="{{ post.url }}" target="_blank">
+                   <img src="{{ post.image_url }}"/>  
+                  {{ post.title }}
                 </a>
             </h2>
             <hr />
-            {{ page.date | date: "%m %d, %Y" }}
+            {{ post.date | date: "%m %d, %Y" }}
           </blockquote>
         {% elsif post.network == 'instagram' or post.network == 'twitter' or post.network == 'tumblr' %}
           {{ post.content }}
