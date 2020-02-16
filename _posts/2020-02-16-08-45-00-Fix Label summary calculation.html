@@ -1,0 +1,14 @@
+---
+layout: post
+network: github
+user: lehrblogger
+repo: webrender/trello-costello
+date: February 16, 2020 at 08:45AM
+pr_title: Fix Label summary calculation
+pr_url: https://github.com/webrender/trello-costello/pull/40
+title: Fix Label summary calculation
+tags:
+- IFTTT
+- Github
+---
+ After entering a couple dozen costs in my board, I noticed the `summaryByLabel` calculation was displayed as `NaN` for some Labels. Some of those Labels had actual costs, and some of them had costs previously that I had removed. While stepping through the JS, it seemed like `costArray[cardIdx]` was sometimes, for example, an Array such as [null, null, null]`. This evaluates to `true`, but then `parseFloat on `null` results in `NaN`, which breaks the sum for that Label. This change avoids that result by only updating `listSums` if that cost exists for that Card.
