@@ -38,8 +38,6 @@
               document.body.replaceChild(newdoc.querySelector('.page-content'), document.querySelector('.page-content'));
               window.scrollTo(0,0);
               addLinkClickEvent();
-              window.twttr.widgets.load();
-              window.instgrm.Embeds.process();
               window.DISQUS.host._loadEmbed();
               history.pushState(null, null, target.pathname);
               document.querySelector('body').classList.remove('-searching');
@@ -65,8 +63,6 @@
       });
     </script>
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
     <script async defer src="https://webrendernet.disqus.com/embed.js"></script>
   </div>
 
