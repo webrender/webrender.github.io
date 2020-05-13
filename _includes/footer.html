@@ -1,0 +1,73 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+      </div>
+
+      <div class="footer-col footer-col-2">
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h2>{{ site.url | escape }}</h2>
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+
+    <script>
+      var addLinkClickEvent = function() {
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', locationChangeHandler);
+        });
+      }
+      var locationChangeHandler = function(evt) {
+        console.log(window.location.host, evt.target.host);
+        if (window.location.host === evt.target.host) {
+          evt.preventDefault();
+          loadInPlace(evt.target);
+        }
+      }
+      var loadInPlace = function(target) {
+        var xhr = new XMLHttpRequest();
+          xhr.open('GET', target.href);
+          xhr.onload = function() {
+            var parser = new DOMParser();
+            var newdoc = parser.parseFromString(xhr.responseText, "text/html");
+            console.log(newdoc);
+            if (newdoc.querySelector('.page-content')) {
+              document.body.replaceChild(newdoc.querySelector('.page-content'), document.querySelector('.page-content'));
+              window.scrollTo(0,0);
+              addLinkClickEvent();
+              window.twttr.widgets.load();
+              window.instgrm.Embeds.process();
+              window.DISQUS.host._loadEmbed();
+              history.pushState(null, null, target.pathname);
+              document.querySelector('body').classList.remove('-searching');
+            } else {
+              window.location = target.href;
+            }
+          };
+          xhr.send();
+      }
+
+      addLinkClickEvent();
+
+      window.addEventListener('popstate', event => {
+        loadInPlace(event.target.location);
+      });
+
+      window.addEventListener('message', event => {
+        if (event.data.type === 'searchClick') {
+          var a = document.createElement('a');
+          a.href = event.data.href;
+          loadInPlace(a);
+        }
+      });
+    </script>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+    <script async defer src="https://webrendernet.disqus.com/embed.js"></script>
+  </div>
+
+</footer>

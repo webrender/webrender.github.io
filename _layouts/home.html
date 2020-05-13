@@ -1,0 +1,75 @@
+---
+layout: default
+---
+<div class="search">
+</div>
+<div class="home">
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <div class="content" style="margin-top: 20px;">
+        <a href="{{ post.url }}" class="linkicon" title="{{ post.date }}"><img src="/assets/link.svg" class="linkicon" /></a>
+        {% if post.network == 'github' %}
+          <blockquote class="github-pull-request">
+            <a href="http://github.com/{{ post.user }}">{{ post.user }}</a> created a pull request in {{ post.repo }}
+            <h2 lang="en" dir="ltr">
+                <a href="{{ post.pr_url }}" target="_blank">
+                    {{ post.pr_title }}
+                </a>
+            </h2>
+            {{ post.content }}
+            <hr />
+            {{ post.date | date: "%B %-d, %Y" }}
+            <img src="/assets/github.svg" class="gh-logo" />
+          </blockquote>
+        {% elsif post.network == 'github_rss' %}
+          <div class="github-rss">
+            {{ post.content }}
+            <img src="/assets/github.svg" class="gh-rss-logo" />
+          </div>
+        {% elsif post.network == 'pocket' %}
+          <blockquote class="github-pull-request">
+            Added an article to favorites in Pocket:
+            <h2 lang="en" dir="ltr">
+                <a href="{{ post.article_url }}" target="_blank">
+                   <img src="{{ post.image_url }}"/>  
+                  {{ post.title }}
+                </a>
+            </h2>
+            <hr />
+            {{ post.date | date: "%m %d, %Y" }}
+          </blockquote>
+        {% elsif post.network == 'instagram' or post.network == 'twitter' or post.network == 'tumblr' %}
+          {{ post.content }}
+        {% else %}
+          <div class="jekyll-entry">
+            {{ post.excerpt }}
+            {% if post.use_excerpt %}
+              <a href="{{ post.url }}">Read more&hellip;</a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="178px" height="304px" viewBox="0 0 178 304" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pattern" transform="translate(88.500000, 76.500000) rotate(270.000000) translate(-88.500000, -76.500000) translate(-215.500000, -12.500000)" fill="#000000">
+            <polygon id="Triangle" points="228 99 304 178 152 178"></polygon>
+            <polygon id="Triangle" points="76 99 152 178 -5.1159077e-13 178"></polygon>
+            <polygon id="Triangle" points="304 20 380 99 228 99"></polygon>
+            <polygon id="Triangle" points="152 20 228 99 76 99"></polygon>
+            <polygon id="Triangle" points="456 20 532 99 380 99"></polygon>
+            <polygon id="Triangle" points="380 99 456 178 304 178"></polygon>
+            <rect id="Rectangle" x="76" y="5.68434189e-13" width="456" height="20"></rect>
+        </g>
+    </g>
+</svg>

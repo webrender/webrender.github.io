@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<div class="search">
+</div>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <p class="post-meta">
+      {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      {% endif %}</p>
+  </header>
+
+  <div class="post-content -article" itemprop="articleBody">
+    {% if page.network == 'github' %}
+      <blockquote class="github-pull-request">
+        <a href="http://github.com/{{ page.user }}">{{ page.user }}</a> created a pull request in {{ page.repo }}
+        <h2 lang="en" dir="ltr">
+            <a href="{{ page.pr_url }}" target="_blank">
+                {{ page.pr_title }}
+            </a>
+        </h2>
+        {{ page.content }}
+        <hr />
+        {{ page.date | date: "%m %d, %Y" }}
+        <img src="/assets/github.svg" class="gh-logo" />
+      </blockquote>
+    {% elsif post.network == 'github_rss' %}
+      <div class="github-rss">
+        {{ post.content }}
+        <img src="/assets/github.svg" class="gh-rss-logo" />
+      </div>
+    {% elsif page.network == 'pocket' %}
+      <blockquote class="github-pull-request">
+        Added an article to favorites in Pocket:
+        <h2 lang="en" dir="ltr">
+            <a href="{{ page.article_url }}" target="_blank">
+               <img src="{{ page.image_url }}"/>  
+              {{ page.title }}
+            </a>
+        </h2>
+        <hr />
+        {{ page.date | date: "%m %d, %Y" }}
+      </blockquote>
+    {% elsif page.network == 'instagram' or page.network == 'twitter' or page.network == 'tumblr' %}
+      {{ page.content }}
+    {% else %}
+      <div class="jekyll-entry">
+        {{ page.content }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>
