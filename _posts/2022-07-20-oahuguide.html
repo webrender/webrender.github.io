@@ -1,0 +1,40 @@
+---
+layout: post
+title: Building my Oahu Guide on Github Pages
+use_excerpt: true
+date: '2022-01-08T17:00:00-08:00'
+tags:
+- projects
+---
+<h4>Oahu Guide</h4>
+<img src="https://webrender.net/oahuguide/assets/img/preview.png"/><br/>
+<p>Shortly after moving to Oahu in 2018, I started putting together a guide to our favorite places for guests that would visit us.  Originally, this took the form of a straightforward GDoc that I'd print out for folks.  Over time, I added more formatting to the document, like a map with annotations.  However, google docs was clunky for this purpose - every time I wanted to add a location to the map, I'd have to edit the custom map, take a screenshot with the right dimensions, and paste it into a page in the document.  Most painfully, if I wanted the locations in the guide to be in a specific order, I'd have to adjust a bunch of the formatting to make everything flow nicely.</p>
+<!--more-->
+<p>After a couple years, I started sharing the guide online with folks.  It covers a lot of places on Oahu which aren't covered by most guides and so it became quite popular, however it was still a painstaking process to edit it.  I decided that I would redo the guide, except this time as a website so that it would be easier to make changes.  The new guide needed to satisfy a few requirements:</p>
+<ul>
+    <li>Easy to view, on both desktop and mobile</li>
+    <li>Nicely formatted when printed</li>
+    <li>Easy to update</li> 
+</ul>
+
+<p>I ended up choosing Github Pages to host the guide.  I'd done some Jekyll work with pages before (like this site) and felt like I didn't really need a whole frontend infrastructure - or any backend. Since I was already using google maps in the document version of the guide, I decided to try and continue using google maps. Initially, I played around with the Static Maps API - attempting to make an exact clone of the google doc - but the functionality was far too limited.  Plus, I definitely had the desire for more interactivity than a static map. So, I switched to the Maps Javascript API.</p>
+
+<p>If you check out the source code for the site, you'll see that there's really two main pieces to rendering the map: The YAML, which contains all the information to render the map, as well as the markdown text needed to generate the sidebar; and the map layout template, which contains all the javascript necessary to render the map.</p>
+
+<p>The YAML breaks down the page in a pretty straightforward manner:</p>
+- Map: each map generates a section in the sidebar, and a container that the JS can use to detect when that map should be loaded.
+- Polygon: The guide is broken down into sections, which you can see in the overview map at the top of the page.  The polygon parameters define which area each sub-map represents.
+- Markers: the individual items on each map, consisting of: a title, a description, the lon/lat coordinates on the map, and an optional image. 
+
+<p>In the map layout, the first thing we do is take the YAML and turn it into a JSON array. Then, we can load the maps API and render the data as necessary.  In addition, there's a little extra JS in the layout to handle things like click events and loading the different maps when the user scrolls down. That's pretty much it, just a sprinkle of javascript to get everything up and running.</p>
+
+<p>A couple months after launching the map, disaster struck: the site was a victim of it's own success.  I had run up against google maps' free tier API limits. I set out to find an open source alternative, and settled on the following:</p>
+<ul>
+    <li><a href="https://www.maptiler.com/server/" target="_blank">Mapping server from Maptiler</a></li>
+    <li><a href="https://data.maptiler.com/downloads/planet/" target="_blank">Vector map data from Maptiler</a></li>
+    <li><a href="https://openmaptiles.org/styles/" target="_blank">Map styles from OpenMapStyles</a></li>
+    <li><a href="https://maplibre.org/" target="_blank">MapLibre for the frontend</a></li>
+</ul>
+<p>I'm super happy with this solution - the maps are sharp and crisp, and MapLibre's API is very close to google maps - I was able to move the maps over to the new libraries within a couple hours.</p>
+<p>Hope this guide will help anyone on their mapping journey! Please hit me up with any questions.</p>
+<p><a href="https://github.com/webrender/oahuguide">Source available on Github.</a></p>
