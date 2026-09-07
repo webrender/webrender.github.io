@@ -1,0 +1,15 @@
+---
+layout: post
+title: campsite-checker
+date: '2016-02-24T08:53:11-08:00'
+tags:
+- projects
+---
+<h4>campsite-checker</h4>
+<img src="https://opengraph.githubassets.com/198817b9d2ed13173cf7eb31c4b4e82bfc1899fcf90466e479f773bff5334c10/webrender/campsite-checker" align="left" height="200" style="margin-right: 10px;"/>
+<p>The most sought-after campgrounds on recreation.gov open their booking windows at a fixed moment and sell out in seconds. campsite-checker is a Python script that drives Firefox through Selenium to watch for a matching site and grab it the instant one frees up.</p>
+<p>You describe what you want in an ini file - a <code>[reservation_#]</code> section per attempt, with the park and site ids pulled from the recreation.gov URLs - then start the script shortly before reservations open. When it finds a match it hands the browser back to you with the 15 minute checkout window already running.</p>
+
+<em>Python, Selenium, geckodriver</em><br><br>
+
+Source &amp; setup instructions <a href="https://github.com/webrender/campsite-checker" target="_blank">available on Github</a>.</p>

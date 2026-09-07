@@ -1,0 +1,15 @@
+---
+layout: post
+title: VisitingHawaiiBot
+date: '2023-03-20T21:59:58-07:00'
+tags:
+- projects
+---
+<h4>VisitingHawaiiBot</h4>
+<img src="https://repository-images.githubusercontent.com/616793927/7729d09a-4e94-441d-ba65-a08fa05a6f11"/>
+<p>r/VisitingHawaii gets the same questions asked constantly, and the answers are usually already sitting in a thread from six months ago. VisitingHawaiiBot watches for new posts and replies with links to the older discussions that actually cover the same ground.</p>
+<p>Rather than matching on keywords, it runs every post through OpenAI's embeddings API and searches for nearest neighbours in the resulting vector space, so it can tell that "where should we stay on the north shore" and "Haleiwa vs Turtle Bay" are the same question. Vectors are cached to a CSV dataset, so only genuinely new posts cost an API call.</p>
+
+<em>Python, OpenAI embeddings, Reddit API</em><br><br>
+
+Source &amp; setup instructions <a href="https://github.com/webrender/VisitingHawaiiBot" target="_blank">available on Github</a>.</p>
