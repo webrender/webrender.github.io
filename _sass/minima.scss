@@ -395,8 +395,14 @@ blockquote.github-pull-request {
 
   li strong {
     font-size: 18px;
+    font-weight: 700;
     display: block;
     margin-top: 15px;
+  }
+
+  li.more-github {
+    font-size: 14px;
+    font-style: italic;
   }
 
   li {
